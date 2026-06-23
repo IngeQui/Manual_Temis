@@ -1,0 +1,301 @@
+:root {
+    --temis-red: #D62828;
+    --temis-dark: #1a1a1a;
+    --temis-gray: #f4f4f4;
+    --temis-white: #ffffff;
+    --temis-text: #333333;
+    --temis-light-gray: #e0e0e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--temis-gray);
+    color: var(--temis-text);
+    line-height: 1.6;
+  }
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  .slide:nth-child(odd) { background: var(--temis-white); }
+  .slide:nth-child(even) { background: var(--temis-gray); }
+  .slide-header {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 900px;
+  }
+  .slide-header h1 {
+    color: var(--temis-red);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .slide-header h2 {
+    color: var(--temis-dark);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  .slide-header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--temis-red);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .descarga {
+    display: inline-block;
+    background: var(--temis-red);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .text-descarga{
+    text-decoration: none;
+    color: #e0e0e0;
+  }
+
+  .phone-frame {
+    position: relative;
+    width: 340px;
+    max-width: 95vw;
+    background: var(--temis-dark);
+    border-radius: 40px;
+    padding: 15px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    margin: 20px auto;
+  }
+  .phone-screen {
+    position: relative;
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    aspect-ratio: 9/19.5;
+  }
+  .phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 28px;
+    background: var(--temis-dark);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 10;
+  }
+  .two-phones {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1100px;
+  }
+  .three-phones {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1400px;
+  }
+  .phone-wrap {
+    text-align: center;
+  }
+  .phone-caption {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--temis-dark);
+    font-size: 1rem;
+  }
+  .feature-list {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+  }
+  .feature-list li {
+    list-style: none;
+    padding: 12px 0 12px 35px;
+    position: relative;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--temis-light-gray);
+  }
+  .feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--temis-red);
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--temis-dark) 0%, #2d2d2d 100%);
+    color: white;
+    text-align: center;
+  }
+  .cover h1 {
+    font-size: 3.5rem;
+    color: var(--temis-red);
+    margin-bottom: 10px;
+  }
+  .cover h2 {
+    font-size: 1.4rem;
+    color: #626262;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .cover-logo {
+    width: 180px;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background: white;
+    padding: 10px;
+  }
+  .cover-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .cover-sub {
+    font-size: 1rem;
+    color: #555555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+  .nav-dots a {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--temis-light-gray);
+    display: block;
+    transition: all 0.3s;
+  }
+  .nav-dots a.active, .nav-dots a:hover {
+    background: var(--temis-red);
+    transform: scale(1.3);
+  }
+  .arrow-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--temis-red);
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-15px); }
+    60% { transform: translateX(-50%) translateY(-8px); }
+  }
+  .tip-box {
+    background: #fff3f3;
+    border-left: 4px solid var(--temis-red);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 20px;
+    max-width: 800px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  .tip-box strong { color: var(--temis-red); }
+  .temis-logo-small {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 101;
+    width: 50px;
+    height: auto;
+    opacity: 0.8;
+  }
+  .temis-logo-small img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .info-box {
+    background: var(--temis-white);
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--temis-red);
+  }
+  .info-box h3 {
+    font-size: 1.4rem;
+    color: var(--temis-dark);
+    margin-bottom: 15px;
+  }
+  .info-box p {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+  }
+  .info-box ul { margin-left: 20px; }
+  .info-box ul li { 
+    margin-bottom: 10px; 
+    font-size: 1.1rem; 
+    text-align: left;
+  }
+  .info-box ul li strong { color: var(--temis-red); }
+
+  .nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+  @media print {
+    .slide { min-height: auto; page-break-after: always; }
+    .nav-dots, .arrow-down, .temis-logo-small { display: none; }
+  }
+  @media (max-width: 768px) {
+    .slide-header h1 { font-size: 1.8rem; }
+    .slide-header h2 { font-size: 1.3rem; }
+    .two-phones, .three-phones { gap: 20px; }
+    .phone-frame { width: 280px; }
+    .temis-logo-small { width: 40px; }
+  }
