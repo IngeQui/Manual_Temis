@@ -15,6 +15,7 @@
 
 <div class="nav-dots">
   <a href="#cover" class="active"></a>
+  <a href="#login"></a>
   <a href="#instalar"></a>
   <a href="#permisos"></a>
   <a href="#sync"></a>
@@ -300,4 +301,42 @@
     <li>Al finalizar podra ver la lista de equipos cargados al reporte</li>
   </ul>
 </section>
+<script>
+  // 1. Seleccionamos todas las secciones y los puntos de navegación
+  const sections = document.querySelectorAll('.slide');
+  const navDots = document.querySelectorAll('.nav-dots a');
+
+  // 2. Configuramos el observador con la nueva estrategia
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Crea una línea de activación en el centro exacto de la pantalla
+    threshold: 0 // Se activa apenas la sección toca esa línea central, sin importar su tamaño
+  };
+
+  // 3. Creamos la función que se ejecuta al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Obtenemos el ID de la sección actual en pantalla
+        const currentId = entry.target.getAttribute('id');
+
+        // Quitamos la clase 'active' de todos los puntos
+        navDots.forEach(dot => {
+          dot.classList.remove('active');
+        });
+
+        // Le agregamos la clase 'active' solo al punto que coincide con el ID actual
+        const activeDot = document.querySelector(`.nav-dots a[href="#${currentId}"]`);
+        if (activeDot) {
+          activeDot.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  // 4. Le decimos al observador que vigile cada sección
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 </body>
